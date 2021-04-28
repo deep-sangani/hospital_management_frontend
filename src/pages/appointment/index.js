@@ -3,6 +3,7 @@ import { Layout, Row, Col, Card, Form, Input, Select, InputNumber, Button } from
 import { ArrowRightOutlined } from '@ant-design/icons'
 import PatientTable from './PatientTable'
 import DoctorlistComponent from './doctorlist'
+import Finalinfo from './FinalInfo'
 const { Option } = Select
 const { Content } = Layout
 export default function AppointmentComponent () {
@@ -21,6 +22,12 @@ export default function AppointmentComponent () {
         case 2: {
             return (
                 <DoctorlistComponent setNext={setNext} />
+            );
+
+        }
+        case 3: {
+            return (
+                <Finalinfo setNext={setNext} />
             );
 
         }

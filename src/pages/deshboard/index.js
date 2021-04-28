@@ -8,17 +8,17 @@ export default function DeshBoardComponent () {
         <Content style={{ margin: "24px 16px 0" }}>
             <Row justify="space-around" align="middle">
                 <Col span={6}>
-                    <Card title="total covid patients" style={{ backgroundColor: "#8dcff8" }} >
+                    <Card title="total covid patients" style={{ backgroundColor: "#8dcff8", borderRadius: "10px" }} >
                         <h2 style={{ textAlign: "center", fontSize: "40px", color: "#177ddc" }}><CountUp end={100} delay={1} /></h2>
                     </Card>
                 </Col>
                 <Col span={6}>
-                    <Card title="recover covid patients" style={{ backgroundColor: "#b2e58b" }} >
+                    <Card title="recover covid patients" style={{ backgroundColor: "#b2e58b", borderRadius: "10px" }} >
                         <h2 style={{ textAlign: "center", fontSize: "40px", color: "#3c8618" }}><CountUp end={100} delay={1} /></h2>
                     </Card>
                 </Col>
                 <Col span={6}>
-                    <Card title="positive covid patients" style={{ backgroundColor: "#f37370" }} >
+                    <Card title="positive covid patients" style={{ backgroundColor: "#f37370", borderRadius: "10px" }} >
                         <h2 style={{ textAlign: "center", fontSize: "40px", color: "#d32029" }}><CountUp end={100} delay={1} /></h2>
                     </Card>
                 </Col>
