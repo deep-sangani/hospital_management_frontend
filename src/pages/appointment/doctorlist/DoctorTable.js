@@ -8,9 +8,15 @@ export default function DoctorTable ({ search, setNext }) {
         const filter = data.filter((obj) => obj.name.includes(search))
         setTabledata(filter)
     }, [search])
-    const onSubmit = (doctorName) => {
-        console.log(doctorName);
-        // setNext(prev => { return prev + 1 })
+    const onSubmit = (doctorinfo) => {
+
+        setNext(prev => {
+            return {
+                ...prev,
+                state: prev.state + 1,
+                doctorinfo: doctorinfo
+            }
+        })
     }
     const cols = [
         {
@@ -27,7 +33,7 @@ export default function DoctorTable ({ search, setNext }) {
         {
 
             key: "action",
-            render: (text, event) => <Button onClick={() => onSubmit(event.name)}>select doctor</Button>
+            render: (text, event) => <Button onClick={() => onSubmit(event)}>select doctor</Button>
 
         }
 

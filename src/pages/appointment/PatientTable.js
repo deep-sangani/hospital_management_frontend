@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { Table } from 'antd'
+import { Button, Table } from 'antd'
 
-export default function PatientTable ({ form }) {
+export default function PatientTable ({ form, setNext }) {
+    const ProccedNext = (val) => {
+        setNext(prev => { return { state: prev.state + 1, payload: val } })
+        console.log(val);
+    }
     const [dataDisplay, setDataDisplay] = useState([])
     useEffect(() => {
 
@@ -23,77 +27,65 @@ export default function PatientTable ({ form }) {
             title: "Name",
             key: "name",
             dataIndex: "name"
-        }, {
-            title: "Age",
-            key: "age",
-            dataIndex: "age"
         },
         {
             title: "Mobile no",
             key: "mobileno",
             dataIndex: "mobileno"
+        },
+        {
+            key: "select",
+            render: (text, event) => <Button onClick={() => ProccedNext(event)}>Continue</Button>
         }
     ]
 
     const data = [
         {
             key: 1,
+            title: "",
             name: "deep",
-            age: 20,
-            mobileno: "9727164672"
+            age: {
+                year: 20,
+                month: 0,
+                day: 0
+            },
+            mobileno: "9727164672",
+            address: "main street",
+            state: "gujrat",
+            email: "drsangani120@gmail.com",
+            remark: ""
         },
         {
             key: 2,
-            name: "yash",
-            age: 18,
-            mobileno: "9123456789"
+            title: "",
+            name: "deep",
+            age: {
+                year: 20,
+                month: 10,
+                day: 12
+            },
+            mobileno: "9727164672",
+            address: "main street",
+            state: "gujrat",
+            email: "drsangani120@gmail.com",
+            remark: ""
         },
         {
             key: 3,
-            name: "jenish",
-            age: 18,
-            mobileno: "97899999"
+            title: "",
+            name: "deep",
+            age: {
+                year: 20,
+                month: 10,
+                day: 12
+            },
+            mobileno: "9727164672",
+            address: "main street",
+            state: "gujrat",
+            email: "drsangani120@gmail.com",
+            remark: ""
         },
-        // {
-        //     key: 4,
-        //     name: "raj",
-        //     age: 20
-        // },
-        // {
-        //     key: 5,
-        //     name: "deep sangani",
-        //     age: 20
-        // },
-        // {
-        //     key: 6,
-        //     name: "deep",
-        //     age: 20
-        // },
-        // {
-        //     key: 7,
-        //     name: "yash",
-        //     age: 18
-        // },
-        // {
-        //     key: 8,
-        //     name: "jenish",
-        //     age: 18
-        // },
-        // {
-        //     key: 9,
-        //     name: "raj",
-        //     age: 20
-        // },
-        // {
-        //     key: 10,
-        //     name: "deep sangani",
-        //     age: 20
-        // },
-        // {
-        //     key: 11,
-        //     name: "deep sangani",
-        //     age: 20
-        // }
+
     ]
 
 

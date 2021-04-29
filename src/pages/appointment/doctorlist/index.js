@@ -7,7 +7,7 @@ const { Content } = Layout
 export default function DoctorlistComponent ({ setNext }) {
     const [search, setSearch] = useState("")
     const prevScreen = () => {
-        setNext(prev => { return prev - 1 })
+        setNext(prev => { return { ...prev, state: prev.state - 1 } })
     }
     return (
 
